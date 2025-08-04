@@ -42,7 +42,7 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUSEhIVFRUVFRUVFRUVFRUVFRUVFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGi0lHyUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAAIDBQYHAQj/xAA7EAABAwIEBAQDBgUEAwEAAAABAAIRAyEEEjVBBVFhcQYigZEyobETQrHB0fAjUuHxBxRichXC0hYz/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAIhEAAgICAgMBAQEBAAAAAAAAAAECEQMhEjFBUWETIjIE/9oADAMBAAIRAxEAWgAB/9k=');
+        background-image: url('https://assets.mottvt.com/Mike.Mott.jpg');
         background-size: cover;
         background-position: center;
         transition: transform 0.3s ease;
@@ -255,7 +255,7 @@
                 <h1>Michael Mott</h1>
                 <p>mike@mottvt.com</p>
             </div>
-            <a href="Mike-index.html" class="nav-link">← Back to Links</a>
+            <a href="index.html" class="nav-link">← Back to Links</a>
         </div>
     </header>
 
@@ -352,32 +352,8 @@
 
 <script>
     function openPost(postId) {
-        alert(`This would open the full blog post: ${postId}`);
-        // In a real implementation, you'd navigate to the individual post
-        // window.location.href = `posts/${postId}.html`;
+        alert('This would open the full blog post: ' + postId);
     }
-
-    // Add some interactivity
-    document.addEventListener('DOMContentLoaded', function() {
-        // Animate blog posts on scroll
-        const posts = document.querySelectorAll('.blog-post');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        });
-        
-        posts.forEach(post => {
-            post.style.opacity = '0';
-            post.style.transform = 'translateY(20px)';
-            post.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(post);
-        });
-    });
 </script>
 ```
 
