@@ -51,26 +51,12 @@
         width: 120px;
         height: 120px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #2d6a4f, #1a4d3a);
+        background-image: url('https://assets.mottvt.com/Mike.Mott.jpg');
+        background-size: cover;
+        background-position: center;
         margin: 0 auto 1.5rem;
         box-shadow: 0 4px 20px rgba(26, 77, 58, 0.2);
         transition: transform 0.3s ease;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    
-    .profile-avatar.has-image {
-        background-image: url('https://assets.mottvt.com/Mike.Mott.jpg');
-    }
-    
-    .profile-avatar.fallback {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 2.5rem;
-        font-weight: bold;
     }
     
     .profile-avatar:hover {
@@ -129,7 +115,6 @@
         
         .container {
             width: 95%;
-            max-width: 350px;
         }
         
         .profile-avatar {
@@ -141,10 +126,6 @@
             font-size: 1.5rem;
         }
         
-        .profile-email {
-            font-size: 0.9rem;
-        }
-        
         .link-item {
             padding: 0.875rem 1.25rem;
             font-size: 1rem;
@@ -153,8 +134,8 @@
     
     @media (max-width: 480px) {
         .profile-avatar {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
         }
         
         .profile-name {
@@ -173,7 +154,7 @@
 <body>
     <div class="container">
         <div class="profile-section">
-            <div id="profileAvatar" class="profile-avatar fallback">MM</div>
+            <div class="profile-avatar"></div>
             <h1 class="profile-name">Michael Mott</h1>
             <p class="profile-email">mike@mottvt.com</p>
         </div>
@@ -193,29 +174,6 @@
         </a>
     </div>
 </div>
-
-<script>
-    // Try to load the image and fallback to initials if it fails
-    document.addEventListener('DOMContentLoaded', function() {
-        const avatar = document.getElementById('profileAvatar');
-        const img = new Image();
-        
-        img.onload = function() {
-            // Image loaded successfully
-            avatar.classList.remove('fallback');
-            avatar.classList.add('has-image');
-            avatar.textContent = '';
-        };
-        
-        img.onerror = function() {
-            // Image failed to load, keep the MM fallback
-            console.log('Profile image failed to load, using initials fallback');
-        };
-        
-        // Try to load the image
-        img.src = 'https://assets.mottvt.com/Mike.Mott.jpg';
-    });
-</script>
 ```
 
 </body>
