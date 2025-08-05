@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Mott - Links</title>
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
         * {
             margin: 0;
@@ -143,7 +145,7 @@
             display: block;
             text-decoration: none;
             padding: 18px 25px;
-            background: white;
+            background: #ffffff;
             border: 2px solid transparent;
             border-radius: 15px;
             color: #1a4d3a;
@@ -277,5 +279,18 @@
             <a href="https://linkedin.com/in/michael-b-mott/" class="link-item" target="_blank">LinkedIn</a>
         </div>
     </div>
+    
+    <!-- Netlify Identity Widget Script -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 </body>
 </html>
