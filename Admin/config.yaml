@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: main # or master if that's your default branch
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Category", name: "category", widget: "select", options: ["Technology", "Business", "Design", "Personal"]}
+      - {label: "Reading Time", name: "reading_time", widget: "string", default: "5 min read"}
+      - {label: "Excerpt", name: "excerpt", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Featured", name: "featured", widget: "boolean", default: false}
+  
+  - name: "projects"
+    label: "Projects" 
+    folder: "projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "select", options: ["Web Development", "Mobile Development", "Design System", "Open Source", "Web Application"]}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Technologies", name: "tech", widget: "list", default: ["React"]}
+      - {label: "Live URL", name: "live_url", widget: "string", required: false}
+      - {label: "GitHub URL", name: "github_url", widget: "string", required: false}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Featured", name: "featured", widget: "boolean", default: false}
