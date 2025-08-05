@@ -264,141 +264,22 @@
         </div>
 
         <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image">🛒</div>
-                <div class="project-content">
-                    <h3 class="project-title">E-Commerce Platform</h3>
-                    <span class="project-category">Web Development</span>
-                    <p class="project-description">
-                        A full-stack e-commerce solution built with React and Node.js, featuring real-time inventory management, payment processing, and advanced analytics.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Stripe</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Live →</a>
-                        <a href="#" class="project-link">GitHub →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">📱</div>
-                <div class="project-content">
-                    <h3 class="project-title">Fitness Tracker App</h3>
-                    <span class="project-category">Mobile Development</span>
-                    <p class="project-description">
-                        A comprehensive fitness tracking app with workout planning, progress monitoring, and social features. Built with React Native for cross-platform compatibility.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Redux</span>
-                        <span class="tech-tag">HealthKit</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">App Store →</a>
-                        <a href="#" class="project-link">Case Study →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">💼</div>
-                <div class="project-content">
-                    <h3 class="project-title">Portfolio CMS</h3>
-                    <span class="project-category">Web Development</span>
-                    <p class="project-description">
-                        A headless CMS specifically designed for creative professionals to showcase their work. Features drag-and-drop portfolio building and client collaboration tools.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">GraphQL</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">AWS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Demo →</a>
-                        <a href="#" class="project-link">Documentation →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">🎨</div>
-                <div class="project-content">
-                    <h3 class="project-title">UI Component Library</h3>
-                    <span class="project-category">Design System</span>
-                    <p class="project-description">
-                        A comprehensive design system and component library built with Storybook. Includes 50+ reusable components with extensive documentation and accessibility features.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Storybook</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">Figma</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Storybook →</a>
-                        <a href="#" class="project-link">NPM Package →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">🔧</div>
-                <div class="project-content">
-                    <h3 class="project-title">API Testing Tool</h3>
-                    <span class="project-category">Open Source</span>
-                    <p class="project-description">
-                        An open-source API testing and monitoring tool with automated test generation, performance benchmarking, and CI/CD integration capabilities.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">FastAPI</span>
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">GitHub Actions</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">GitHub →</a>
-                        <a href="#" class="project-link">Documentation →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">📊</div>
-                <div class="project-content">
-                    <h3 class="project-title">Analytics Dashboard</h3>
-                    <span class="project-category">Web Application</span>
-                    <p class="project-description">
-                        A real-time analytics dashboard for SaaS applications with customizable widgets, advanced filtering, and automated reporting features.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Vue.js</span>
-                        <span class="tech-tag">D3.js</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Redis</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Live Demo →</a>
-                        <a href="#" class="project-link">Case Study →</a>
-                    </div>
-                </div>
+            <!-- Projects will appear here when you add them through the CMS -->
+            <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: #2d6a4f; opacity: 0.7;">
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">No projects yet</h3>
+                <p>Visit <strong>/admin</strong> to add your first project!</p>
             </div>
         </div>
     </div>
 
     <script>
-        // Simple filter functionality
+        // Simple filter functionality for when you have projects
         document.querySelectorAll('.filter-tab').forEach(tab => {
             tab.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
+                // Filter functionality will work when you add projects through CMS
             });
         });
     </script>
