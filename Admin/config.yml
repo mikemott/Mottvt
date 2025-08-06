@@ -14,7 +14,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Category", name: "category", widget: "select", options: ["Technology", "Business", "Design", "Personal"]}
+      - {label: "Category", name: "category", widget: "select", options: ["Technology", "Business", "Education", "Personal"]}
       - {label: "Reading Time", name: "reading_time", widget: "string", default: "5 min read"}
       - {label: "Excerpt", name: "excerpt", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -27,7 +27,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Category", name: "category", widget: "select", options: ["Web Development", "Mobile Development", "Design System", "Open Source", "Web Application"]}
+      - {label: "Category", name: "category", widget: "select", options: ["Gardening", "AI", "Education", "IT Infrastructure", "Technology"]}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Technologies", name: "tech", widget: "list", default: ["React"]}
       - {label: "Live URL", name: "live_url", widget: "string", required: false}
