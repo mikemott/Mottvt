@@ -282,11 +282,35 @@
         <div class="links-container">
             <a href="mike-blog.html" class="link-item">Blog</a>
             <a href="mike-projects.html" class="link-item">Projects</a>
+            <a href="mike-contact.html" class="link-item">Contact</a>
             <a href="https://linkedin.com/in/michael-b-mott/" class="link-item" target="_blank">LinkedIn</a>
             <a href="https://calendly.com/mike-mottvt/30min" class="link-item" target="_blank">Book a Call</a>
         </div>
+
+        <div style="text-align: center; margin-top: 2rem; opacity: 0.5; font-size: 0.9rem; color: #2d6a4f;">
+            <span id="visitor-count">Loading visitors...</span>
+        </div>
     </div>
-    
+
+    <!-- Visitor Counter Script -->
+    <script>
+        const WORKER_URL = 'https://mottvt-worker.mikebmott.workers.dev';
+
+        // Track this visit
+        fetch(`${WORKER_URL}/api/visitor`, { method: 'POST' })
+            .then(response => response.json())
+            .then(data => {
+                if (data.count) {
+                    document.getElementById('visitor-count').textContent =
+                        `👋 Visitor #${data.count.toLocaleString()}`;
+                }
+            })
+            .catch(error => {
+                console.error('Error tracking visitor:', error);
+                document.getElementById('visitor-count').textContent = '';
+            });
+    </script>
+
     <!-- Netlify Identity Widget Script -->
     <script>
       if (window.netlifyIdentity) {
