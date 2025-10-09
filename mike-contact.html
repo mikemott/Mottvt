@@ -7,6 +7,8 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         * {
             margin: 0;
@@ -247,6 +249,11 @@
                     <textarea id="message-text" name="message" required></textarea>
                 </div>
 
+                <!-- Turnstile Widget -->
+                <div class="form-group">
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAB5rM7FYn2o8jaNV"></div>
+                </div>
+
                 <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
             </form>
         </div>
@@ -267,10 +274,22 @@
             submitBtn.textContent = 'Sending...';
 
             // Get form data
+            const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
+
+            if (!turnstileToken) {
+                messageDiv.textContent = 'Please complete the verification challenge.';
+                messageDiv.className = 'message error';
+                messageDiv.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                return;
+            }
+
             const formData = {
                 name: form.name.value,
                 email: form.email.value,
-                message: form['message'].value
+                message: form['message'].value,
+                turnstileToken: turnstileToken
             };
 
             try {
