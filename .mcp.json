@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "cloudflare-workers": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://bindings.mcp.cloudflare.com/sse"]
+    },
+    "cloudflare-pages": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://pages.mcp.cloudflare.com/sse"]
+    },
+    "cloudflare-r2": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://r2.mcp.cloudflare.com/sse"]
+    },
+    "cloudflare-analytics": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://analytics.mcp.cloudflare.com/sse"]
+    },
+    "cloudflare-dns": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://dns.mcp.cloudflare.com/sse"]
+    }
+  }
+}
