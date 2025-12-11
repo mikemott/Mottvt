@@ -13,7 +13,8 @@
 	],
 	"assets": {
 		// The path to the directory containing the `index.html` file to be served at `/`
-		"directory": "./public"
+		"directory": "./public",
+		"binding": "ASSETS"
 	},
 	/**
 	 * Routes - Custom domains are configured in Cloudflare Dashboard

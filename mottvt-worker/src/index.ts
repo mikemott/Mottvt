@@ -10,6 +10,7 @@
 interface Env {
 	VISITOR_STATS: KVNamespace;
 	RESEND_API_KEY: string;
+	ASSETS: Fetcher;
 }
 
 interface ContactFormData {
@@ -50,7 +51,9 @@ export default {
 			return handleVisitorGet(env);
 		}
 
-		return new Response('Not Found', { status: 404, headers: corsHeaders });
+		// Serve static assets for all other requests
+		// This ensures static files work correctly with custom domains
+		return env.ASSETS.fetch(request);
 	},
 } satisfies ExportedHandler<Env>;
 
