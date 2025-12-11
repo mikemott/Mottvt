@@ -1,3 +1,6 @@
 node_modules/
 .wrangler/
-mottvt-worker/
+# Allow mottvt-worker source files but ignore build artifacts
+mottvt-worker/node_modules/
+mottvt-worker/.wrangler/
+mottvt-worker/public/
