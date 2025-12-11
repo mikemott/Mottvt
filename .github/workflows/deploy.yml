@@ -28,7 +28,9 @@ jobs:
           cp mike-projects.html mottvt-worker/public/
           cp mike-contact.html mottvt-worker/public/
           cp favicon.svg mottvt-worker/public/
-          cp Brand/Mike.Mott.jfif mottvt-worker/public/ || echo "Image not found, skipping"
+          # Copy image from Brand directory (sibling to mottvt.com) or use existing
+          cp ../Brand/Mike.Mott.jfif mottvt-worker/public/ 2>/dev/null || \
+          (test -f mottvt-worker/public/Mike.Mott.jfif && echo "Image already exists" || echo "Warning: Image not found")
       
       - name: Deploy to Cloudflare Workers
         working-directory: ./mottvt-worker
