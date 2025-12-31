@@ -34,9 +34,9 @@ jobs:
           (test -f mottvt-worker/public/Mike.Mott.jfif && echo "Image already exists" || echo "Warning: Image not found")
       
       - name: Deploy to Cloudflare Workers
-        working-directory: ./mottvt-worker
         uses: cloudflare/wrangler-action@v3
         with:
+          workingDirectory: ./mottvt-worker
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
