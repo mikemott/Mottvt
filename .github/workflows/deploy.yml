@@ -24,6 +24,7 @@ jobs:
       
       - name: Copy files to public directory
         run: |
+          mkdir -p mottvt-worker/public
           cp index.html mottvt-worker/public/
           cp mike-projects.html mottvt-worker/public/
           cp mike-contact.html mottvt-worker/public/
