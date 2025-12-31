@@ -29,9 +29,7 @@ jobs:
           cp mike-contact.html mottvt-worker/public/
           cp favicon.svg mottvt-worker/public/
           cp quillstack-logo.png mottvt-worker/public/
-          # Copy image from Brand directory (sibling to mottvt.com) or use existing
-          cp ../Brand/Mike.Mott.jfif mottvt-worker/public/ 2>/dev/null || \
-          (test -f mottvt-worker/public/Mike.Mott.jfif && echo "Image already exists" || echo "Warning: Image not found")
+          cp Mike.Mott.jpg mottvt-worker/public/
       
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
