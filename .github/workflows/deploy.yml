@@ -30,6 +30,7 @@ jobs:
           cp mike-contact.html mottvt-worker/public/
           cp favicon.svg mottvt-worker/public/
           cp quillstack-logo.png mottvt-worker/public/
+          cp vtliveview-logo.svg mottvt-worker/public/
           cp Mike.Mott.jpg mottvt-worker/public/
       
       - name: Deploy to Cloudflare Workers
