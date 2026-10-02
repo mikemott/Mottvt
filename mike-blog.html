@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects — Michael Mott</title>
+  <title>Blog — Michael Mott</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,8 +91,8 @@ a:hover { color: var(--primary); }
   color: var(--on-surface-variant);
 }
 
-/* Project list */
-.project-list {
+/* Post list */
+.post-list {
   display: flex;
   flex-direction: column;
   gap: 1px;
@@ -101,20 +101,44 @@ a:hover { color: var(--primary); }
   margin-bottom: 48px;
 }
 
-.project {
+.post {
   background: var(--base);
   padding: 32px 28px;
   transition: background 0.2s;
+  cursor: pointer;
 }
 
-.project:hover {
+.post:hover {
   background: var(--container-low);
 }
 
-.project-meta {
+.post-date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--on-surface-muted);
+  margin-bottom: 12px;
+}
+
+.post-title {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--on-surface);
+  margin-bottom: 8px;
+}
+
+.post-excerpt {
+  font-size: 0.95rem;
+  color: var(--on-surface-variant);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.post-tags {
   display: flex;
   gap: 8px;
-  margin-bottom: 12px;
   flex-wrap: wrap;
 }
 
@@ -129,36 +153,19 @@ a:hover { color: var(--primary); }
   line-height: 1;
 }
 
-.project-title {
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 80px 24px;
+  color: var(--on-surface-variant);
+}
+
+.empty-state h2 {
   font-family: var(--font-sans);
-  font-weight: 500;
+  font-weight: 300;
   font-size: 1.5rem;
   color: var(--on-surface);
-  margin-bottom: 8px;
-}
-
-.project-desc {
-  font-size: 0.95rem;
-  color: var(--on-surface-variant);
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
-
-.project-link {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--on-surface-muted);
-  text-decoration: none;
-  border-bottom: 1px solid var(--container-high);
-  transition: all 0.2s;
-}
-
-.project-link:hover {
-  color: var(--primary);
-  border-bottom-color: var(--primary);
+  margin-bottom: 12px;
 }
 
 /* Footer */
@@ -192,7 +199,7 @@ a:hover { color: var(--primary); }
 @media (max-width: 560px) {
   .site-header .inner { padding: 16px 20px; }
   .page-header { padding: 48px 0 40px; }
-  .project { padding: 24px 20px; }
+  .post { padding: 24px 20px; }
 }
   </style>
 </head>
@@ -205,46 +212,30 @@ a:hover { color: var(--primary); }
 
   <main class="wrap">
     <div class="page-header">
-      <h1>Projects</h1>
-      <p>Things I'm building at the intersection of analog thinking and digital tools.</p>
+      <h1>Blog</h1>
+      <p>Thoughts on building, designing, and thinking at the intersection of analog and digital.</p>
     </div>
 
-    <div class="project-list">
-      <article class="project">
-        <div class="project-meta">
-          <span class="chip" style="background:#E85D75;color:#FFFFFF">ACTIVE</span>
-          <span class="chip" style="background:#64D2FF;color:#1A1C1C">IOS</span>
-        </div>
-        <h2 class="project-title">QuillStack</h2>
-        <p class="project-desc">
-          An iOS app that reads your handwritten notes and automatically creates reminders, calendar events, emails, GitHub issues, and more. Transform handwriting into action.
-        </p>
-        <a href="https://quillstack.io" class="project-link" target="_blank">View Project →</a>
-      </article>
+    <div class="empty-state">
+      <h2>Coming Soon</h2>
+      <p>Posts will appear here.</p>
+    </div>
 
-      <article class="project">
-        <div class="project-meta">
-          <span class="chip" style="background:#90EE90;color:#1A1C1C">LIVE</span>
-          <span class="chip" style="background:#FF7F50;color:#FFFFFF">WEB</span>
-        </div>
-        <h2 class="project-title">VT-LiveView</h2>
-        <p class="project-desc">
-          Real-time Vermont weather radar, NOAA alerts, traffic updates, and road conditions. Live data aggregation for the Green Mountain State.
+    <!-- Example structure for future posts
+    <div class="post-list">
+      <article class="post">
+        <div class="post-date">January 15, 2026</div>
+        <h2 class="post-title">Building QuillStack</h2>
+        <p class="post-excerpt">
+          The journey from handwritten notes to automated workflows, and why analog tools still matter in a digital world.
         </p>
-        <a href="https://vtliveview.com" class="project-link" target="_blank">View Project →</a>
-      </article>
-
-      <article class="project">
-        <div class="project-meta">
-          <span class="chip" style="background:#FFB6C1;color:#1A1C1C">COMING SOON</span>
-          <span class="chip" style="background:#008080;color:#FFFFFF">TOOL</span>
+        <div class="post-tags">
+          <span class="chip" style="background:#D4FF00;color:#1A1C1C">DESIGN</span>
+          <span class="chip" style="background:#64D2FF;color:#1A1C1C">PRODUCT</span>
         </div>
-        <h2 class="project-title">Project Three</h2>
-        <p class="project-desc">
-          Placeholder for upcoming project. Details to be announced.
-        </p>
       </article>
     </div>
+    -->
   </main>
 
   <footer class="site-footer">
